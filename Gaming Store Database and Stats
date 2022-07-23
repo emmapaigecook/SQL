@@ -1,0 +1,29 @@
+--Create a gaming store database
+
+CREATE TABLE gaming_store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, color TEXT, units_sold INTEGER);
+INSERT INTO gaming_store VALUES
+(1, "mouse", 10, "purple", 45),
+(2, "keyboard", 21, "sky blue", 35),
+(3, "mouse pad", 15, "purple", 54),
+(4, "left speaker", 20, "black", 40),
+(5, "right speaker", 20, "black", 41),
+(6, "controller", 45, "green", 78),
+(7, "wireless mouse", 35, "multicolor", 56),
+(8, "motherboard", 78, "black", 65),
+(9, "LED light", 18, "multicolor", 59),
+(10, "wireless keyboard", 60, "sky blue", 87),
+(11, "controller charger", 34, "green", 34),
+(12, "decal stickers", 10, "multicolor", 65),
+(13, "character plush", 25, "pink", 110),
+(14, "gaming shirt", 21, "pink", 100),
+(15, "character slippers", 30, "pink", 98);
+
+
+--display the database ordered by units sold
+SELECT * FROM gaming_store ORDER BY units_sold desc;
+
+--display the database ordered by price
+SELECT * FROM gaming_store ORDER BY price;
+
+--How many units are we selling from each price point?
+SELECT price, SUM (units_sold) FROM gaming_store GROUP BY price;
