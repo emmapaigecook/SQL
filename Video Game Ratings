@@ -1,0 +1,25 @@
+--Create a Video Game Rating database
+
+CREATE TABLE games (id INTEGER PRIMARY KEY, name TEXT, console TEXT, rating INTEGER);
+
+INSERT INTO games VALUES
+
+(1, "Super Mario Odyssey", "Switch", 5),
+(2, "Lego Star Wars", "PS4", 5),
+(3, "Animal Crossing", "Switch", 3),
+(4, "Stardew Valley", "Switch", 4),
+(5, "Skyrim", "PS4", 5),
+(6, "Stray", "PC", 4),
+(7, "Arise", "PC", 3),
+(8, "Persona 5", "PS4", 4),
+(9, "Mario Pary Superstars", "Switch", 4),
+(10, "The Sims", "PC", 3);
+
+--Display database ordered by rating with a limit of 5
+SELECT * FROM games ORDER BY rating desc LIMIT 5;
+
+--Find average rating of games played on PS4
+SELECT AVG (rating) FROM games WHERE console = "PS4";
+
+--Display entire database ordered by console
+SELECT * FROM games ORDER BY console;
