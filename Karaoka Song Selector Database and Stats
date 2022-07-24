@@ -1,0 +1,29 @@
+--Create karaoke song selector database
+
+CREATE TABLE songs 
+    (id INTEGER PRIMARY KEY,
+    title TEXT,
+    artist TEXT,
+    mood TEXT,
+    duration INTEGER,
+    released INTEGER);
+    
+INSERT INTO songs (title, artist, mood, duration, released)
+    VALUES 
+("Bohemian Rhapsody", "Queen", "epic", 60, 1975),
+("Let it go", "Idina Menzel", "epic", 227, 2013),
+("I will survive", "Gloria Gaynor", "epic", 198, 1978),
+("Twist and Shout", "The Beatles", "happy", 152, 1963),
+("La Bamba", "Ritchie Valens", "happy", 166, 1958),
+("I will always love you", "Whitney Houston", "epic", 273, 1992),
+("Sweet Caroline", "Neil Diamond", "happy", 201, 1969),
+("Call me maybe", "Carly Rae Jepsen", "happy", 193, 2011);
+    
+-- Select all song titles    
+SELECT title FROM songs;
+
+-- Select song titles where the mood is epic or song was released after 1990
+SELECT title FROM songs WHERE mood = "epic" OR released >1990;
+
+-- Select song titles where the mood is epic, song was released after 1990, and the duration is less than 4 minutes
+SELECT title FROM songs WHERE mood = "epic" AND released >1990 AND duration <240;
