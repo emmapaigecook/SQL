@@ -1,4 +1,4 @@
--- Creat 2 different databases for artists (arist name, country, genre) and songs (artist name, song title)
+-- Create 2 seperate databases for artists (arist name, country, genre) and songs (artist name, song title)
 
 CREATE TABLE artists 
     (id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -40,8 +40,12 @@ INSERT INTO songs (artist, title) VALUES
 ("Queen", "Bohemian Rhapsody"),
 ("Guns N' Roses", "Don't cry");
 
-
+--Select all songs by the artist Queen from first database 
 SELECT title FROM songs WHERE artist = "Queen";
+
+--Select all artists who make pop music from the second database
 SELECT name FROM artists WHERE genre = "Pop";
+
+--Combining and using both databases -select all songs from pop artists
 SELECT title FROM songs WHERE artist in (SELECT name FROM artists WHERE genre = "Pop");
 
